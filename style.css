@@ -1,0 +1,135 @@
+:root {
+    --background-gray: #f5f3ef;
+    --card: #fff;
+    --accent: #febd2f;
+    --text-primary: #000;
+    --text-secondary: #646464;
+    --outline: #dcdcdc;
+    --font-size-64: 64px;
+    --font-size-40: 40px;
+    --font-size-24: 24px;
+    --font-size-18: 18px;
+    --font-size-16: 16px;
+    --font-weight-med: 500;
+}
+
+.content{
+    padding: 15px 20px 0 20px;
+    background-color: var(--background-gray);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Roboto Serif', serif;
+}
+
+p, 
+button,
+span,
+a, 
+.nav-links span {
+    font-family: 'Roboto', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.display-flex{
+    display: flex;
+}
+
+.grid-container{
+    display: grid;
+}
+
+.grid-container-1{
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr 2fr 4fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "banner banner"
+    "card-section card-section"
+    "footer footer"
+    ;
+}
+
+.grid-item-1{
+    background-color: lightblue;
+    grid-area: header;
+    justify-content: space-between; 
+    align-items: center;
+    /* margin-bottom: 20px; */
+}
+
+
+.nav-links, .nav-btn{
+    font-weight: var(--font-weight-med);
+    font-size: var(--font-size-16);
+}
+
+.nav-links span{
+    margin-right: 10px;
+}
+
+.nav-btn{
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: var(--text-primary);
+    color: var(--card);
+}
+
+
+
+.grid-item-2{
+    background-color: lightcoral;
+    grid-area: banner;
+    /* justify-content: space-between; */
+}
+
+.left-side-banner h1{
+    font-size: 64px;
+}
+
+
+.grid-item-3{
+    background-color: lightcyan;
+    grid-area: banner-img;
+}
+
+.grid-item-4{
+    background-color: lightgoldenrodyellow;
+    grid-area: card-section;
+}
+
+.grid-item-5{
+    background-color: var(--accent);
+    grid-area: footer;
+    padding: 24px 0;
+    height: 32px;
+    text-align: center;
+}
+
+/* 
+.grid-item-6{
+    background-color: lightgreen;
+}
+
+.grid-item-7{
+    background-color: lightpink;
+}
+
+.grid-item-8{
+    background-color: lightsalmon;
+}
+
+.grid-item-9{
+    background-color: lightseagreen;
+}
+
+.grid-item-10{
+    background-color: lightslategray;
+} */
