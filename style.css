@@ -11,11 +11,20 @@
     --font-size-18: 18px;
     --font-size-16: 16px;
     --font-weight-med: 500;
+    --font-weight-light: 100;
+    --font-family-Roboto-Serif: "Roboto Serif";
+    --font-family-Roboto: "Roboto";
+}
+
+body{
+    background-color: var(--background-gray);
+
 }
 
 .content{
-    padding: 15px 20px 0 20px;
-    background-color: var(--background-gray);
+    padding: 15px 60px 0 60px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 h1,
@@ -47,7 +56,7 @@ a{
 
 .grid-container-1{
     grid-template-columns: auto auto;
-    grid-template-rows: 1fr 2fr 4fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
     grid-template-areas: 
     "header header"
     "banner banner"
@@ -57,11 +66,9 @@ a{
 }
 
 .grid-item-1{
-    background-color: lightblue;
     grid-area: header;
     justify-content: space-between; 
     align-items: center;
-    /* margin-bottom: 20px; */
 }
 
 
@@ -80,30 +87,138 @@ a{
     padding: 10px 20px;
     background-color: var(--text-primary);
     color: var(--card);
+    font-size: var(--font-size-18);
 }
 
-
+/* banner area */
 
 .grid-item-2{
-    background-color: lightcoral;
     grid-area: banner;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.left-side-banner{
+    margin-right: 20px;
+    flex-shrink: 1.5;
 }
 
 .left-side-banner h1{
-    font-size: 64px;
+    font-size: var(--font-size-64);
+    font-weight: var(--font-weight-med);
+    margin-bottom: 30px;
+    /* font family is not applying for some reason */
+    font-family: var(--font-family-Roboto-Serif);
+}
+
+.p1-font-size{
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-light);
+
+    /* font family is not applying for some reason  */
+    font-family: var(--font-family-Roboto);
+}
+
+.right-side-banner img{
+    width: 100%;
+    border-radius: 40px;
+    /* display: block; */
 }
 
 
-.grid-item-3{
-    background-color: lightcyan;
-    grid-area: banner-img;
-}
+/* cards */
 
 .grid-item-4{
-    background-color: lightgoldenrodyellow;
     grid-area: card-section;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(3, 450px);
+    grid-template-rows: repeat(2, 400px);
+    gap: 60px 30px;
+    grid-template-areas: 
+        'card1 card2 card3'
+        'card4 card5 card6'
+    ; */
 }
+
+.card-holder{
+    background-color: var(--card);
+    width: 320px;
+    max-width: 350px;
+    height: 220px;
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.card-holder img{
+    position: absolute;
+    bottom: 260px;
+    left: 260px;
+}
+
+.card-holder h3{
+    font-family: var(--font-family-Roboto-Serif);
+    font-size: var(--font-size-24);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.card-holder p{
+    font-family: var(--font-family-Roboto);
+    font-size: var(--font-size-18);
+    font-weight: var(--font-weight-light);
+    margin-bottom: 25px;
+}
+
+.card-holder button{
+    background-color: var(--card);
+    border: .5px solid var(--text-primary);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+.accent-card{
+    background-color: var(--accent);
+    font-size: var(--font-size-40);
+    font-family: var(--font-family-Roboto-Serif);
+}
+
+.margin-card{
+    margin-left: 20px;
+}
+
+.grid-item-6{
+    grid-area: card1;
+}
+
+.grid-item-7{
+    grid-area: card2;
+}
+
+.grid-item-8{
+    grid-area: card3;
+}
+
+.grid-item-9{
+    grid-area: card4;
+}
+
+.grid-item-10{
+    grid-area: card5;
+}
+
+.grid-item-11{
+    grid-area: card6;
+}
+
+
+/* footer */
 
 .grid-item-5{
     background-color: var(--accent);
@@ -113,23 +228,57 @@ a{
     text-align: center;
 }
 
-/* 
-.grid-item-6{
-    background-color: lightgreen;
-}
 
-.grid-item-7{
-    background-color: lightpink;
-}
 
-.grid-item-8{
-    background-color: lightsalmon;
-}
+/* media queries */
 
-.grid-item-9{
-    background-color: lightseagreen;
-}
+@media (max-width: 1366px){
+    .grid-item-2{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        /* width: 1000px; */
+    }
 
-.grid-item-10{
-    background-color: lightslategray;
-} */
+
+    .right-side-banner img {
+        max-width: 100%;
+        
+        height: 80%;
+        object-fit: cover;
+        
+    }
+
+    .left-side-banner{
+        margin-right: 0;
+        /* padding: 0 100px; */
+    }
+
+    .left-side-banner p {
+        margin-bottom: 20px;
+    }
+
+    .grid-item-4{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .margin-card{
+        margin-left: 0;
+    }
+
+    .small-size-margin-card{
+        margin-right: 20px;
+    }
+
+  }
+
+
+
+  @media (max-width: 939px){
+
+
+  }
+
+
+
